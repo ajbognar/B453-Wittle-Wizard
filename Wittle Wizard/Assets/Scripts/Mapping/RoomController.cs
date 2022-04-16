@@ -27,11 +27,14 @@ public class RoomController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // For testing with static generation
-        /*LoadRoom("Room1", 0, 0);
-        LoadRoom("Room0", -1, 0);
-        LoadRoom("Room2", 1, 0);
-        LoadRoom("Room4", 0, 1);*/
+        if (SceneManager.GetActiveScene().buildIndex.Equals(0)) {
+            // For testing with static generation
+            LoadRoom("Room1", 0, 0);
+            LoadRoom("Room0", -1, 0);
+            LoadRoom("Room2", 1, 0);
+            LoadRoom("Room4", 0, 1);
+        }
+        
 
 
     }
