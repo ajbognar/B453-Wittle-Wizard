@@ -10,23 +10,12 @@ public class Player : MonoBehaviour
 
     [SerializeField] float _moveSpeed = 6f;
     [SerializeField] float _moveSpeedUp = 3f;
-    public float playerHealthCurrent = 30f;
-    public float playerHealthMax = 30f;
-    public float playerManaCurrent = 20f;
-    public float playerManaMax = 20f;
-    public int playerGems = 0;
-    public Image manaBar;    
-    public Image manaBarReal;
-    public Image healthBar;
     Vector2 playerVelocity;
-    float manaRegenRate = (float) .007;
-    public float spellCost = (float) 5;
     public Spell spellOne;
     public Spell spellTwo;
     public Spell activeSpell;
     public Image spellOneImage;
     public Image spellTwoImage;
-    public Animator healthAnimate;
 
     bool isGrounded;
     // Start is called before the first frame update
@@ -40,63 +29,16 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
-
-        //undo impossible health and mana values (above max, below 0)
-        if(playerHealthCurrent > playerHealthMax){
-            playerHealthCurrent = playerHealthMax;
-        }
-        if(playerManaCurrent > playerManaMax){
-            playerManaCurrent = playerManaMax;
-        }
-        if(playerManaCurrent < 0){
-            playerManaCurrent = 0;
-        }
-
-        //test for health damage
-        if(Input.GetKeyDown("l")){
-            TakeDamage(10f);
-        }
-
-        if(Input.GetKeyDown("k")){
-            TakeDamage(2f);
-        }
-
-        if(Input.GetKeyDown("j")){
-            TakeDamage(20f);
-        }
-
-        //test for mana damage, start regen coroutine
+        // Move();
+        //casts spell
         if(Input.GetMouseButtonDown(0)){
-            if(playerManaCurrent >= spellCost){
-                manaRegenRate = (float) .007;
-                StopAllCoroutines();
-                StartCoroutine(StartManaRegen());
-                playerManaCurrent -= activeSpell.cost;
-                print("Spell " + activeSpell.color + " " + activeSpell.name + " was cast!");
-            }
+            HealthManaManager.instance.SpellCast();
         }
 
         if(Input.GetKeyDown("q")){
             SwapActive();
         }
 
-        playerManaCurrent += manaRegenRate;
-        //adjust the 'real' and 'false' mana bars, also health
-        float manaChangePercent = (float) playerManaCurrent / playerManaMax;
-        float manaChangePercentFalse = (float) ((playerManaCurrent / playerManaMax) - (spellCost / playerManaMax));
-        float healthChangePercent = (float) playerHealthCurrent / playerHealthMax;
-        healthBar.fillAmount = healthChangePercent;
-
-        //triggers health bar animation if health below 50%
-        if(healthChangePercent < 0.5f){
-            healthAnimate.SetBool("HealthLow", true);
-        }
-        else{
-            healthAnimate.SetBool("HealthLow", false);
-        }
-        manaBar.fillAmount = manaChangePercentFalse;
-        manaBarReal.fillAmount = manaChangePercent;
     }
 
     void FixedUpdate()
@@ -117,13 +59,6 @@ public class Player : MonoBehaviour
     void OnCollisionStay2D(Collision2D collision)
     {
         isGrounded = true;
-    }
-
-    //deals damage to player
-    public void TakeDamage(float damage)
-    {
-        CameraShaker.shaker.ShakeScreen(.3f, (damage/10f));
-        playerHealthCurrent -= damage;
     }
 
     //change the spell in the active slot
@@ -152,14 +87,5 @@ public class Player : MonoBehaviour
             activeSpell = spellTwo;
         }
     }
-
-    //wait 3 seconds and then return mana regen to normal value
-    private IEnumerator StartManaRegen() {
-    while(true) {
-        yield return new WaitForSeconds(3);
-        manaRegenRate = (float) .07;
-        yield break;
-    }
-}
 }
 

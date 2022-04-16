@@ -232,21 +232,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 6
   _moveSpeedUp: 3
-  playerHealthCurrent: 30
-  playerHealthMax: 30
-  playerManaCurrent: 20
-  playerManaMax: 20
-  playerGems: 0
-  manaBar: {fileID: 138537817}
-  manaBarReal: {fileID: 1470581284}
-  healthBar: {fileID: 1519495679}
-  spellCost: 5
   spellOne: {fileID: 11400000, guid: 0bda802231c2914498bc3c307515e826, type: 2}
   spellTwo: {fileID: 11400000, guid: 5e38a322a41bb864ba153d00fc269172, type: 2}
   activeSpell: {fileID: 11400000, guid: 0bda802231c2914498bc3c307515e826, type: 2}
   spellOneImage: {fileID: 1533294438}
   spellTwoImage: {fileID: 189870129}
-  healthAnimate: {fileID: 1519495681}
 --- !u!50 &156495235
 Rigidbody2D:
   serializedVersion: 4
@@ -1133,6 +1123,7 @@ GameObject:
   - component: {fileID: 1200650932}
   - component: {fileID: 1200650931}
   - component: {fileID: 1200650930}
+  - component: {fileID: 1200650934}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1230,6 +1221,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1200650934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200650929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5384eafc410c2a94fb9d46fa04cc135c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealthCurrent: 30
+  playerHealthMax: 30
+  playerManaCurrent: 20
+  playerManaMax: 20
+  playerGems: 0
+  manaBar: {fileID: 138537817}
+  manaBarReal: {fileID: 1470581284}
+  healthBar: {fileID: 1519495679}
+  healthAnimate: {fileID: 1519495681}
 --- !u!1 &1357679240
 GameObject:
   m_ObjectHideFlags: 0

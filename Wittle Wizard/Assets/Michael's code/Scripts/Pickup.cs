@@ -27,14 +27,14 @@ public class Pickup : MonoBehaviour
             if(Vector2.Distance(transform.position, playerPos) <= 0.5){
                 Destroy(gameObject);
                 if(gameObject.CompareTag("Gem")){
-                    player.playerGems += 1;
-                    gemText.SetText(player.playerGems.ToString());
+                    HealthManaManager.instance.playerGems += 1;
+                    gemText.SetText(HealthManaManager.instance.playerGems.ToString());
                 }
                 else if(gameObject.CompareTag("Health")){
-                    player.playerHealthCurrent += 10;
+                    HealthManaManager.instance.playerHealthCurrent += 10;
                 }
                 else if(gameObject.CompareTag("Mana")){
-                    player.playerManaCurrent += 5;
+                    HealthManaManager.instance.playerManaCurrent += 5;
                 }
             }
         }

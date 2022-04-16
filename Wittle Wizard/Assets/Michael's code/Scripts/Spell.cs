@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class Spell : ScriptableObject
 {
+    [SerializeField] public GameObject spellPrefab;
     public float cost;
     public string spellName;
     public string color;

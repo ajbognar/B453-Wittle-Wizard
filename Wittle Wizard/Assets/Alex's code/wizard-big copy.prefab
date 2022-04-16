@@ -40,9 +40,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8387678508458587309}
   - component: {fileID: 8387678508458587308}
-  - component: {fileID: 8387678508458587219}
   - component: {fileID: 8387678508458587218}
   - component: {fileID: 8387678508458587216}
+  - component: {fileID: 1441720856107144136}
+  - component: {fileID: 1579683753854332690}
+  - component: {fileID: 8387678508458587219}
+  - component: {fileID: -6003434376277339691}
   m_Layer: 0
   m_Name: wizard-big copy
   m_TagString: Player
@@ -116,20 +119,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8387678508458587219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8387678508458587311}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13ea02187127e4443b47a0f0b68681f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _jumpSpeed: 8.3
-  GroundPos: {fileID: 8387678508167357953}
 --- !u!50 &8387678508458587218
 Rigidbody2D:
   serializedVersion: 4
@@ -176,3 +165,66 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &1441720856107144136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8387678508458587311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc628eff11bf334e862523ba9c73e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveSpeed: 6
+  _moveSpeedUp: 3
+  spellOne: {fileID: 0}
+  spellTwo: {fileID: 0}
+  activeSpell: {fileID: 0}
+  spellOneImage: {fileID: 0}
+  spellTwoImage: {fileID: 0}
+--- !u!114 &1579683753854332690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8387678508458587311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cb8390017e7c2348a028fb8ee75e43a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellAttack1: {fileID: 0}
+  spellAttack2: {fileID: 0}
+  activeSpell: {fileID: 0}
+--- !u!114 &8387678508458587219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8387678508458587311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13ea02187127e4443b47a0f0b68681f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _jumpSpeed: 8.3
+  GroundPos: {fileID: 8387678508167357953}
+--- !u!114 &-6003434376277339691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8387678508458587311}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bbf8aac353458e40ad49fd84537fb76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  jumpForce: 800
+  GroundPos: {fileID: 8387678508167357953}

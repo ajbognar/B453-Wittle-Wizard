@@ -6,8 +6,10 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 5;
     [SerializeField] float jumpForce = 800;
+    [SerializeField] Transform GroundPos;
     Rigidbody2D rb;
     bool isGrounded = false;
+    private float jumpTimer = 0f;
 
     void Start()
     {
@@ -17,6 +19,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Physics2D.OverlapCircleAll(GroundPos.position, .05f, LayerMask.GetMask("Ground")).Length > 0 && jumpTimer >= .25f) {
+            isGrounded = true;
+            jumpTimer = 0;
+        }
         Movement();
     }
     void Movement()
@@ -33,23 +39,27 @@ public class PlayerMovement : MonoBehaviour
             transform.position -= new Vector3(Time.deltaTime * moveSpeed, 0, 0);
             transform.localScale = new Vector3(1, 1, 1);
         }
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            if (isGrounded)
-            {
-                rb.velocity = Vector2.zero;
-                rb.AddForce(new Vector2(0, jumpForce));
-                isGrounded = false;
-            }
+            rb.velocity = Vector2.zero;
+            rb.AddForce(new Vector2(0, jumpForce));
+            isGrounded = false;
+        }
+        if (!isGrounded) {
+            jumpTimer += Time.deltaTime;
         }
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnDrawGizmosSelected() {
+        Gizmos.DrawSphere(GroundPos.position, .05f);
+    }
+
+    /*void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Ground")//ground check
         {
             isGrounded = true;
         }
-    }
+    }*/
 
 }
