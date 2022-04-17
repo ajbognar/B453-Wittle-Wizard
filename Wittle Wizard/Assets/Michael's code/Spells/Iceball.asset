@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Iceball
   m_EditorClassIdentifier: 
   spellPrefab: {fileID: 8808781266987096006, guid: 76980e28a06586b4ba3e55598bb2db8b, type: 3}
-  cost: 3
+  cost: 6
   spellName: Iceball
   color: blue
   icon: {fileID: 21300000, guid: f6bb9bd883b5adb4a9de2415bc23f4fa, type: 3}
