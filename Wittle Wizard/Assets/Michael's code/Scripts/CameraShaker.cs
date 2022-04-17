@@ -10,7 +10,7 @@ public class CameraShaker : MonoBehaviour
     private float xShake, yShake, shakeIntensity;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         shaker = this;
     }
