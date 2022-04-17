@@ -34,7 +34,10 @@ public class UIImageSwap : MonoBehaviour
 
         if(swapActive == true){
             float targetDistance = Vector2.Distance(transform.position, otherImagePos);
-            Vector3 targetVector = new Vector3(baseX + ((otherImage.transform.localScale.x - transform.localScale.x)/targetDistance), baseY + ((otherImage.transform.localScale.y - transform.localScale.y)/targetDistance), 1);
+            Vector3 targetVector = new Vector3(
+                baseX + ((otherImage.transform.localScale.x - transform.localScale.x)/targetDistance), 
+                baseY + ((otherImage.transform.localScale.y - transform.localScale.y)/targetDistance),
+                1);
             transform.localScale = targetVector;
             transform.position = Vector2.MoveTowards(transform.position, otherImagePos, (float) 1);
             if(Vector2.Distance(transform.position, otherImagePos) == 0){
