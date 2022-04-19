@@ -17,7 +17,7 @@ public class HealthManaManager : MonoBehaviour
     float manaRegenRate = (float) .007;
     public Animator healthAnimate;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         instance = this;
     }

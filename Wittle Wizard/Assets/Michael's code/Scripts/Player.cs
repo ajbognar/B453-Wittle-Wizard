@@ -39,6 +39,14 @@ public class Player : MonoBehaviour
             SwapActive();
         }
 
+        if(Input.GetKeyDown("k")){
+            HealthManaManager.instance.TakeDamage(20f);
+        }
+
+        if(Input.GetKeyDown("l")){
+            HealthManaManager.instance.TakeDamage(5f);
+        }
+
     }
 
     void FixedUpdate()

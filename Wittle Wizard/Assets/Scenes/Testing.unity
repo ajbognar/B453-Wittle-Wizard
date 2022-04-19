@@ -345,7 +345,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2c2d4ba1ef946664dac864f65e0d2da8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8e7206616d6939e4fb02a32b5d0206eb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2077,6 +2077,7 @@ GameObject:
   - component: {fileID: 2049911222}
   - component: {fileID: 2049911221}
   - component: {fileID: 2049911224}
+  - component: {fileID: 2049911225}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2163,6 +2164,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentRoom: {fileID: 0}
   moveSpeedWhenRoomChange: 100
+--- !u!114 &2049911225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049911220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa5f21eea40106a4f8d3a996efb21c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2072199235
 GameObject:
   m_ObjectHideFlags: 0
@@ -2311,8 +2324,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4279165662
+  m_fontColor: {r: 0.8686942, g: 0.8862745, b: 0.05490193, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2546,7 +2559,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 25ce55416e44b614eae28d9567ceeab0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f6bb9bd883b5adb4a9de2415bc23f4fa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
