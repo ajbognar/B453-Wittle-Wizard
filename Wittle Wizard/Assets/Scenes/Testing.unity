@@ -870,6 +870,14 @@ PrefabInstance:
       propertyPath: activeSpell
       value: 
       objectReference: {fileID: 11400000, guid: d0718f3accc75d24690ea21b7080b31f, type: 2}
+    - target: {fileID: 1441720856107144136, guid: 17b21a0f6d36cbe46a7387793a1d9123, type: 3}
+      propertyPath: spellOneImage
+      value: 
+      objectReference: {fileID: 251282867}
+    - target: {fileID: 1441720856107144136, guid: 17b21a0f6d36cbe46a7387793a1d9123, type: 3}
+      propertyPath: spellTwoImage
+      value: 
+      objectReference: {fileID: 2141646356}
     - target: {fileID: 8387678508458587218, guid: 17b21a0f6d36cbe46a7387793a1d9123, type: 3}
       propertyPath: m_Material
       value: 
