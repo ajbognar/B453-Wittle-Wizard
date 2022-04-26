@@ -52,4 +52,13 @@ public class Pickup : MonoBehaviour
 
         }
     }
+
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        hasTriggered = false;
+        foreach(Collider2D col in GetComponents<Collider2D>()) {
+            col.enabled = true;
+        }
+        GetComponent<Rigidbody2D>().gravityScale = 0.5f;
+    }
 }
