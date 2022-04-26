@@ -33,7 +33,6 @@ public class GameEnd : MonoBehaviour
             endImage.color = imageColor;
             if(endTimer > 2){
                 Application.Quit();
-                UnityEditor.EditorApplication.isPlaying = false;
             }
         }
     }

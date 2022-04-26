@@ -7,8 +7,6 @@ using UnityEngine.UI;
 public class Pickup : MonoBehaviour
 {
     bool hasTriggered = false;
-    bool shrinkActive = false;
-    public Player player;
     Vector2 playerPos;
     public TextMeshProUGUI gemText;
 
