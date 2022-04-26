@@ -30,8 +30,10 @@ public class GameEnd : MonoBehaviour
         if(hasEnded){
             endTimer += Time.deltaTime;
             imageColor.a = endTimer/1;
+            endImage.color = imageColor;
             if(endTimer > 2){
                 Application.Quit();
+                UnityEditor.EditorApplication.isPlaying = false;
             }
         }
     }

@@ -19,6 +19,7 @@ public class EndPortal : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D col)
     {
         if(col.gameObject.CompareTag("Player")){
+            print("End triggered");
             GameEnd.instance.TriggerEnd();
         }     
     }
