@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 5
-  attackSpeed: 0.05
+  attackSpeed: 0.03
 --- !u!50 &4272757158895204920
 Rigidbody2D:
   serializedVersion: 4

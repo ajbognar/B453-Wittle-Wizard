@@ -18,7 +18,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Awake()
     {
-        player = GameObject.Find("Player Character");//finds the character in the scene to calculate distance
+        player = GameObject.Find("wizard-big copy");//finds the character in the scene to calculate distance
     }
 
     void Update()
@@ -72,12 +72,12 @@ public class EnemyMovement : MonoBehaviour
         {
             attackPosition = new Vector3(player.transform.position.x + 1.5f, player.transform.position.y + 0.5f, player.transform.position.z);
         }
-        transform.position = Vector2.MoveTowards(transform.position, attackPosition, attackSpeed);//move towards slowly  (follow the player)
+        transform.position = Vector3.MoveTowards(transform.position, attackPosition, attackSpeed);//move towards slowly  (follow the player)
 
         if (attackTimer > 2)
         {
 
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, attackSpeed * 3);//move in quickly for attack
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, attackSpeed * 3);//move in quickly for attack
             attackPosition.x *= -1;
         }
         if (attackTimer > 2.3)
