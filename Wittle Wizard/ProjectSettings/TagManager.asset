@@ -9,6 +9,7 @@ TagManager:
   - Health
   - Spell
   - Ground
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -45,4 +46,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Wall
+    uniqueID: 2445947497
     locked: 0

@@ -40,7 +40,7 @@ public class Wizard : MonoBehaviour
     void Jump() {
         if (Input.GetButtonDown("Jump") && isGrounded) {
             GetComponent<Rigidbody2D>().velocity = new Vector3(0, _jumpSpeed, 0);
-            isGrounded = false;
+            // isGrounded = false;
         }
 
         if (!isGrounded) {
