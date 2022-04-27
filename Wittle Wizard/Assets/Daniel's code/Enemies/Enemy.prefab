@@ -186,3 +186,4 @@ MonoBehaviour:
   dropHealth: {fileID: 7624259535719799459, guid: 8a5e5f0e8fe52e74b9dd378497a20990, type: 3}
   dropMana: {fileID: 6951621072298942994, guid: 4ca6d38fc47a7564db567184c49cc074, type: 3}
   dropGem: {fileID: 1760844517220044057, guid: 66beb6ff02b397640906bcbae5e47ae5, type: 3}
+  drops: {fileID: 11400000, guid: d354dc1f788d9fa46b48cc8e8af556f7, type: 2}
