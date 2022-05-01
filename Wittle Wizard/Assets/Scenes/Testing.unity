@@ -661,6 +661,7 @@ MonoBehaviour:
   manaBar: {fileID: 720154769}
   manaBarReal: {fileID: 1154272921}
   healthBar: {fileID: 2121957447}
+  gemText: {fileID: 2100881413}
   healthAnimate: {fileID: 2121957444}
 --- !u!114 &1120150237
 MonoBehaviour:
@@ -2040,7 +2041,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.25001526}
+  m_AnchoredPosition: {x: 0, y: 0.25}
   m_SizeDelta: {x: 0, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1732242980
