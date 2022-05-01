@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6e1e7433af6398408fb0fd9675430f8, type: 3}
   m_Name: MagicMissile
   m_EditorClassIdentifier: 
-  cost: 3
-  name: Magic Missile
+  spellPrefab: {fileID: 8808781266987096006, guid: f394687b0b5d67741ae1a8ac7fd6c254, type: 3}
+  cost: 7
+  spellName: Magic Missile
   color: green
   icon: {fileID: 21300000, guid: 2c2d4ba1ef946664dac864f65e0d2da8, type: 3}
