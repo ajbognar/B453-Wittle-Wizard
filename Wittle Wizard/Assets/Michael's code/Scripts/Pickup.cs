@@ -8,7 +8,6 @@ public class Pickup : MonoBehaviour
 {
     bool hasTriggered = false;
     Vector2 playerPos;
-    public TextMeshProUGUI gemText;
 
     // Start is called before the first frame update
     void Start()
@@ -23,10 +22,8 @@ public class Pickup : MonoBehaviour
             playerPos = Player.instance.transform.position;
             transform.position = Vector3.MoveTowards(transform.position, playerPos, .01f);
             if(Vector2.Distance(transform.position, playerPos) <= 1f){
-                Destroy(gameObject);
                 if(gameObject.CompareTag("Gem")){
-                    HealthManaManager.instance.playerGems += 1;
-                    gemText.SetText(HealthManaManager.instance.playerGems.ToString());
+                    HealthManaManager.instance.ChangeGems(1);
                 }
                 else if(gameObject.CompareTag("Health")){
                     HealthManaManager.instance.playerHealthCurrent += 10;
@@ -34,6 +31,8 @@ public class Pickup : MonoBehaviour
                 else if(gameObject.CompareTag("Mana")){
                     HealthManaManager.instance.playerManaCurrent += 5;
                 }
+                hasTriggered = false;
+                Destroy(gameObject);      
             }
         }
     }

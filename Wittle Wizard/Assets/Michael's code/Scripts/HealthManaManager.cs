@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HealthManaManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class HealthManaManager : MonoBehaviour
     public Image manaBarReal;
     public Image healthBar;
     float manaRegenRate = (float) .007;
+    public TextMeshProUGUI gemText;
     public Animator healthAnimate;
     // Start is called before the first frame update
     void Awake()
@@ -69,6 +71,12 @@ public class HealthManaManager : MonoBehaviour
                 playerManaCurrent -= Player.instance.activeSpell.cost;
                 print("Spell " + Player.instance.activeSpell.color + " " + Player.instance.activeSpell.spellName + " was cast!");
             }
+    }
+
+    public void ChangeGems(int changeNum)
+    {
+        playerGems += changeNum;
+        gemText.SetText(playerGems.ToString());
     }
 
     private IEnumerator StartManaRegen() {
